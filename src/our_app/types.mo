@@ -1,7 +1,7 @@
 import Principal "mo:base/Principal";
 
 module {
-    public type UserId = Principal;
+    public type UserId = Text;
     public type ActivityId = Text;
 
     public type User = {
@@ -18,4 +18,11 @@ module {
         followers: [UserId],
         activity: [ActivityId],
     }
+        public type Activity = {
+            id: ActivityId,
+            payer: UserId,
+            payee: UserId,
+            coin: Nat,
+            reason: Text
+        }
 }

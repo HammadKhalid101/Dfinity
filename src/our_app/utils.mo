@@ -8,6 +8,10 @@ module {
     type UserId = Types.UserId;
     type ActivityId = Types.ActivityId;
 
+
+    // Function to get user data
+    // Param directory is the Hasmap of all the users
+    // Param userId is the Id for user
     public func getUser(directory: Database.Directory, userId: UserId): User {
         let existing = directory.findOne(userId);
         switch (existing) {
@@ -22,7 +26,4 @@ module {
         }
     }
 
-    public func hasAccess(userId: UserId, user: User): Bool {
-    userId == user.id
-  };
 }

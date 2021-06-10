@@ -1,4 +1,3 @@
-import Connectd "canister:connectd";
 import Database "./database";
 import Types "./types";
 import Utils "./utils";
@@ -27,5 +26,5 @@ actor Backend{
     public query func get(userId: UserId): async User {
         Utils.getUser(directory, userId)
     };
-    
+
 };

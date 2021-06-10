@@ -4,7 +4,8 @@
   "description": "",
   "keywords": [],
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "build-css" : "tailwindcss build frontend/src/styles.css -o frontend/public/styles.css"
   },
   "devDependencies": {
     "@dfinity/agent": "0.8.8",
@@ -18,5 +19,8 @@
     "util": "0.12.3",
     "webpack": "5.24.4",
     "webpack-cli": "4.5.0"
+  },
+  "dependencies": {
+    "tailwindcss": "^2.0.4"
   }
 }

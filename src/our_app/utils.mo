@@ -17,11 +17,14 @@ module {
         switch (existing) {
             case (?existing) { existing };
             case (null) {
-                id = userId,
-                username = "",
-                coin = 1000,
-                followers = [],
-                activity = [],
+                {
+                    id = userId;
+                    username = "";
+                    coin = 1000;
+                    followers = [];
+                    activity = [];
+                }
+              
             }
         }
     }

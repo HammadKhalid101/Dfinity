@@ -1,5 +1,7 @@
 import Array "mo:base/Array";
 import HashMap "mo:base/HashMap";
+import Hash "mo:base/Hash";
+
 import Principal "mo:base/Principal";
 import Types "./types";
 
@@ -10,7 +12,11 @@ module {
     type ActivityId = Types.ActivityId;
 
     public class Directory() {
-        let userTable = HashMap.HashMap<UserId, User>(1, isEq, Principal.hash);
+        // Funtion to check if two userId is equal
+        // Params X and y are two userId
+        func isEq(x: UserId, y: UserId): Bool { x == y };
+
+        let userTable = HashMap.HashMap<UserId, User>(1, isEq, Hash.hash);
 
     
     // Function to create new user
@@ -24,7 +30,7 @@ module {
     // Param userID is the Id of user
     // Param user is the new data of user
         public func updateOne(userId: UserId, user: User) {
-            userTable.put(userId, profile);
+            userTable.put(userId, user);
          };
     
     // Function to get user
@@ -33,20 +39,18 @@ module {
             userTable.get(userId);
         };
 
-    // Funtion to check if two userId is equal
-    // Params X and y are two userId
-        func isEq(x: UserId, y: UserId): Bool { x == y };
+    
 
     // Function to convert new user type to user type
     // Param userID is the Id of user
     // Param user is the data of new user
         func makeUser(userId: UserId, user: NewUser): User {
             {
-                id = userId,
-                username = user.username,
-                coin = 1000,
-                followers = [],
-                activity = [],
+                id = userId;
+                username = user.username;
+                coin = 1000;
+                followers = [];
+                activity = [];
             }
         };
     }

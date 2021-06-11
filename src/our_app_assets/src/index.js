@@ -4,6 +4,7 @@ import { idlFactory as our_app_idl, canisterId as our_app_id } from 'dfx-generat
 import { injectHtml } from "./js/util";
 import { dashboardHTML } from './js/pages/dashbord'
 import { authHTML } from './js/pages/auth'
+import { profileHTML } from './js/pages/profile'
 
 
 const agent = new HttpAgent();
@@ -80,6 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
     signInButton.addEventListener('click', () => {
       console.log("clicked sign-in-button")
       indexBody.innerHTML = dashboardHTML()
+
+      let profileLink = document.getElementById('profile-link');
+      profileLink.addEventListener('click', () => {
+        console.log("clicked profile-link")
+        indexBody.innerHTML = profileHTML()
+      })
     })
   })
 

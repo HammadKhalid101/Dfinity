@@ -35,11 +35,11 @@ export const dashboardHTML = () => (
                 >
               </li>
               <li class="items-center">
-                <a
+                <span
                   class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-                  href="#/profile"
+                  id="profile-link"
                   ><i class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
-                  Your Profile</a>
+                  Your Profile</span>
               </li>
             </ul>
           </div>
@@ -68,21 +68,6 @@ export const dashboardHTML = () => (
                 />
               </div>
             </form>
-            <ul
-              class="flex-col md:flex-row list-none items-center hidden md:flex"
-            >
-              <a class="text-blueGray-500 block" href="#pablo" onclick="openDropdown(event,'user-dropdown')">
-                <div class="items-center flex">
-                  <span
-                    class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"
-                    ><img
-                      alt="..."
-                      class="w-full rounded-full align-middle border-none shadow-lg"
-                      src="./assets/img/team-1-800x800.jpg"
-                  /></span>
-                </div>
-              </a>
-            </ul>
           </div>
         </nav>
         <!-- Header -->
@@ -104,7 +89,7 @@ export const dashboardHTML = () => (
                           </span>
                         </div>
                         <div class="relative w-auto pl-4 flex-initial">
-                          <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-yellow-500">
+                          <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-pink-500">
                             <i class="fas fa-coins"></i>
                           </div>
                         </div>

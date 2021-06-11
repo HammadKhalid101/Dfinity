@@ -5,11 +5,14 @@
   "keywords": [],
   "scripts": {
     "build": "webpack",
-    "build-css" : "tailwindcss build frontend/src/styles.css -o frontend/public/styles.css"
+    "build-css": "tailwindcss build frontend/src/styles.css -o frontend/public/styles.css"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
     "@dfinity/agent": "0.8.8",
     "assert": "2.0.0",
+    "babel-loader": "^8.2.2",
     "buffer": "6.0.3",
     "events": "3.3.0",
     "html-webpack-plugin": "5.3.1",
@@ -17,10 +20,11 @@
     "stream-browserify": "3.0.0",
     "terser-webpack-plugin": "5.1.1",
     "util": "0.12.3",
-    "webpack": "5.24.4",
+    "webpack": "^5.24.4",
     "webpack-cli": "4.5.0"
   },
   "dependencies": {
+    "html-loader": "^2.1.2",
     "tailwindcss": "^2.0.4"
   }
 }

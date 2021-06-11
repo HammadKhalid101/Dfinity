@@ -33,7 +33,7 @@ export const profileHTML = () => (
     </div>
     </nav>
     <main class="profile-page">
-        <section class="relative block" style="height: 500px;">
+        <section class="relative block" style="height: 300px;">
             <div class="absolute top-0 w-full h-full bg-center bg-cover"
                 style='background-color: rgba(30, 58, 138, 1);'>
                 <span id="blackOverlay" class="w-full h-full absolute"></span>

@@ -38,14 +38,27 @@ actor Backend{
         var allowance: Nat = from.coin;
 
         var balanceAfterTx: Nat = allowance - amount;
-        // Add to activity log
+        // TODO: Add to activity log
 
-        assert(balanceAfterTx < 0);
+        assert(balanceAfterTx >= 0);
 
-        from.coin -= amount;
-        toUser.coin += amount;
+        directory.updateOne(from.id, {
+            id = from.id;
+            username = from.username;
+            coin = balanceAfterTx;
+            followers = from.followers;
+            activity = from.activity;
+        });
+
+        directory.updateOne(toUser.id, {
+            id = toUser.id;
+            username = toUser.username;
+            coin = toUser.coin + amount;
+            followers = toUser.followers;
+            activity = toUser.activity;
+        });
        
-        return from;
+        return Utils.getUser(directory, fromUserId);
     }
 
 };

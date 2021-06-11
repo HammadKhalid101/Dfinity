@@ -66,7 +66,7 @@ document
     const userId = parseInt(
       document.getElementById("balanceIdToLookup").value.toString()
     );
-    const balance = await our_app.getBalance(userId);
+    const balance = await our_app.getActivities();
     console.log(balance);
 
     document.getElementById("info-box-balance").innerText = balance;
@@ -81,9 +81,11 @@ document.getElementById("transferButton").addEventListener("click", () => {
   );
   const amount = parseInt(document.getElementById("amount").value.toString());
 
+  const reason = document.getElementById("reason").value.toString()
+
   let result = "";
   our_app
-    .transferCoin(fromuserId, touserId, amount)
+    .transferCoin(fromuserId, touserId, amount, reason)
     .then((res) => (result = res))
     .catch((err) => (result = "Couldn't complete transfer!"));
   console.log(result)

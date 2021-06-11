@@ -559,6 +559,19 @@ video {
   width: 100%;
 }
 
+.modal {
+  transition: opacity 0.25s ease;
+}
+.modal-conatiner.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}
+
+.transfer-container {
+  width: 600px;
+  padding: 50px;
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 640px;

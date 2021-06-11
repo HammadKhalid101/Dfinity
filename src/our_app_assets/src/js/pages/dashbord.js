@@ -38,9 +38,16 @@ export const dashboardHTML = () => (
                 <span
                   class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
                   id="profile-link"
-                  ><i class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
+                  ><i class="fas fa-user-circle cursor-pointer text-blueGray-400 mr-2 text-sm"></i>
                   Your Profile</span>
               </li>
+              <li class="items-center">
+              <span
+                class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+                id="transaction-modal"
+                ><i class="fas fa-user-circle cursor-pointer text-blueGray-400 mr-2 text-sm"></i>
+                Share Rewards</span>
+            </li>
             </ul>
           </div>
         </div>

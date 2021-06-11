@@ -51,9 +51,42 @@ for (let usr of some_users) {
 }
 
 document.getElementById("getUserById").addEventListener("click", async () => {
-  const userId = parseInt(document.getElementById("userIdToLookup").value.toString());
+  const userId = parseInt(
+    document.getElementById("userIdToLookup").value.toString()
+  );
   const theUser = await our_app.get(userId);
   console.log(theUser);
 
   document.getElementById("info-box").innerText = theUser.username;
+});
+
+document
+  .getElementById("getBalanceById")
+  .addEventListener("click", async () => {
+    const userId = parseInt(
+      document.getElementById("balanceIdToLookup").value.toString()
+    );
+    const balance = await our_app.getBalance(userId);
+    console.log(balance);
+
+    document.getElementById("info-box-balance").innerText = balance;
+  });
+
+document.getElementById("transferButton").addEventListener("click", () => {
+  const fromuserId = parseInt(
+    document.getElementById("fromUserId").value.toString()
+  );
+  const touserId = parseInt(
+    document.getElementById("toUserId").value.toString()
+  );
+  const amount = parseInt(document.getElementById("amount").value.toString());
+
+  let result = "";
+  our_app
+    .transferCoin(fromuserId, touserId, amount)
+    .then((res) => (result = res))
+    .catch((err) => (result = "Couldn't complete transfer!"));
+  console.log(result)
+
+  document.getElementById("info-box-transfer").innerText = result;
 });

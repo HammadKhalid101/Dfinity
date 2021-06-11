@@ -69,14 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let indexBody = document.getElementById("index-body");
   let signInLink = document.getElementById('sign-in-link')
-  let signInButton = document.getElementById('sign-in-button')
-
   // Inserts authHTML
 
   signInLink.addEventListener('click', () => {
     console.log("clicked sign-in-link")
     indexBody.innerHTML = authHTML()
-
+    let signInButton = document.getElementById('sign-in-button');
     // Inserts dashboardHTML
 
     signInButton.addEventListener('click', () => {

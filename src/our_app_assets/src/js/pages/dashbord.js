@@ -144,41 +144,7 @@ export const dashboardHTML = () => (
             </div>
           </div>
         </div>
-        <div class="px-4  mx-auto w-full -m-0">
-          <div class="p-8">
-          <figure class="md:flex bg-blueGray-200 rounded-xl p-5">
-            <div class="space-y-4">
-               <figcaption class="font-medium">
-                <div class="text-cyan-600">
-                  <b>Alex189</b> awarded <b>SarahTaylor</b> 8000 coins!
-                </div>
-                </figcaption>
-                <blockquote>
-                  <p class="text-lg font-semibold">
-                    “Sarah is awesome. She really helped me out with my job 
-                    applications and encouraged me throughout the process”
-                  </p>
-                </blockquote>
-               </div>
-          </figure>
-          </div>
-          <div class="p-8">
-            <figure class="md:flex bg-blueGray-200 rounded-xl p-5">
-              <div class="space-y-4">
-                 <figcaption class="font-medium">
-                  <div class="text-cyan-600">
-                    <b>Alex189</b> awarded <b>SarahTaylor</b> 8000 coins!
-                  </div>
-                  </figcaption>
-                  <blockquote>
-                    <p class="text-lg font-semibold">
-                      “Sarah is awesome. She really helped me out with my job 
-                      applications and encouraged me throughout the process”
-                    </p>
-                  </blockquote>
-                 </div>
-            </figure>
-            </div>
+        <div id="activity-feed" class="px-4  mx-auto w-full -m-0">
         </div>
     </div>`
 )

@@ -72,16 +72,7 @@ document
     document.getElementById("info-box-balance").innerText = balance;
   });
 
-document.getElementById("transferButton").addEventListener("click", () => {
-  const fromuserId = parseInt(
-    document.getElementById("fromUserId").value.toString()
-  );
-  const touserId = parseInt(
-    document.getElementById("toUserId").value.toString()
-  );
-  const amount = parseInt(document.getElementById("amount").value.toString());
-
-  const reason = document.getElementById("reason").value.toString()
+async function transfer(fromuserId, touserId, amount, reason) {
 
   let result = "";
   our_app
@@ -91,4 +82,4 @@ document.getElementById("transferButton").addEventListener("click", () => {
   console.log(result)
 
   document.getElementById("info-box-transfer").innerText = result;
-});
+};

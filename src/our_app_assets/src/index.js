@@ -16,9 +16,35 @@ const our_app = Actor.createActor(our_app_idl, { agent, canisterId: our_app_id }
 
 var loggedInUser;
 var selectedUser;
+var followerList = [1n, 2n];
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
+}
+
+function getActivity() {
+  our_app.getActivities().then((res) => {
+    res.forEach(async (item, index) => {
+      if (
+        followerList.indexOf(item[index].payee) > -1 ||
+        followerList.indexOf(item[index].payer)
+      ) {
+        payeeName = await our_app.get(item[index].payee);
+        payerName = await our_app.get(item[index].payer);
+        var activity = document.getElementById("activity-feed");
+        activity.innerHTML +=
+          '<div class="p-8"> <figure class="md:flex bg-blueGray-200 rounded-xl p-5"> <div class="space-y-4"> <figcaption class="font-medium"> <div class="text-cyan-600"> <b>' +
+          payeeName +
+          "</b> awarded <b>" +
+          payerName +
+          "</b>" +
+          item[index].coin +
+          '</div></figcaption><blockquote> <p class="text-lg font-semibold">“' +
+          reason +
+          "”</p></blockquote></div></figure></div>";
+      }
+    });
+  });
 }
 
 let randomNum = getRandomInt(1000000);
